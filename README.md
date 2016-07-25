@@ -38,7 +38,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 	
 	3. Use Cloudera JSONSerDe 'hive-serdes-1.0-SNAPSHOT.jar'
 	
-	4. Both pre build JAR files are tested on Cludera Hadoop Distribution CDH3 v0.3.7, 
+	4. Both JAR files are build and tested on Cludera Hadoop Distribution CDH3 v0.3.7, 
 	   for other target systems, user can compile and built JAR files on target system using maven3, 
 	   for details see Annexure-A and Annexure-B
 		a. flume-sources-1.0-SNAPSHOT.jar, 
@@ -46,7 +46,11 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 	
 ## Note:
 	1. Code is tested on Cloudera Hadoop Distribution CDH3. 
-	2. "flume-sources-1.0-SNAPSHOT.jar", "hive-serdes-1.0-SNAPSHOT.jar" pre build JAR files are attached.
+	2. Pre build JAR files are attached.
+		a. flume-sources-1.0-SNAPSHOT.jar
+		b. hive-serdes-1.0-SNAPSHOT.jar
+
+
 
 
 
