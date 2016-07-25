@@ -253,7 +253,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		hive> describe formatted tweets;
 
 
-## 8. Load data inti Hive tables:
+## 8. Load data into Hive tables:
 
 * Copy flume data from HDFS to local disk and then into Hive tables. Get Flume data file names. Open new terminal
  
@@ -265,6 +265,13 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		$ mkdir  rawTweets
 		$ cd rawTweets/
 		$ hadoop fs -get /user/hive/warehouse/twitter-Analysis.db/tweets/* $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/rawTweets/	
+
+* Load Data into Hive tables, your file name may have a different name like; FlumeData.xxxxx		
+		
+		hive> LOAD DATA LOCAL INPATH '$HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/rawTweets/FlumeData.1468333621171' INTO TABLE tweets;
+
+		hive> LOAD DATA LOCAL INPATH '$HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/rawTweets/FlumeData.1468333621172' INTO TABLE tweets;
+
 
 ## 9. Run queries:
 
