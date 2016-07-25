@@ -59,8 +59,20 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		b. `hive-serdes-1.0-SNAPSHOT.jar`
 
 
-STEP-01:
----------
-	Setup Twitter application to get consumerKey & accessToken details
+1. STEP-01:
+----------
+Setup Twitter application to get consumerKey & accessToken details.
+
+...a: Login/Open a Twitter account
+...b: Go to the following link and click on ‘create app’.
+...`https://apps.twitter.com/app` 
+...c: Fill in the necessary details
+...d: Enter full web site URL. Last forward slash (/) is required; otherwise it will not validate. Example: ...http://www.yahoo.com/
+...e: Accept the agreement and click on ‘create your Twitter application’.
+...f: Go to ‘Keys and Access Token’ tab.
+...g: Copy the consumer key and the consumer secret.
+...h: Scroll down further and click on ‘create my access token’.
+...i: Copy the Access Token and Access token Secret.
+...j: Note down all four key at some place, will need this in Flume config file.
 
 
