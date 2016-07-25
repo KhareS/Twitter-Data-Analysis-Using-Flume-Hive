@@ -1,5 +1,5 @@
 # Twitter-Data-Analysis-Using-Flume-Hive
-Store live streaming Tweeter data in HDFS using Apache flume and load this data in Hive for analysis. Example use Cloudera Hadoop Distribution CHD3.
+Store live streaming Tweeter data in HDFS using Apache flume, further load this data in Hive for analysis. Example use Cloudera Hadoop Distribution CHD3.
 
 ## Target System:
 	1. Ubuntu v10.10
