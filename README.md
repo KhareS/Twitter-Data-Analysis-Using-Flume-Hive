@@ -28,21 +28,22 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 	3. 	JSONSerDe compatibility.
 
 ## Solutions:
-	1. Use Cloudera JAR file 'flume-sources-1.0-SNAPSHOT.jar' for Twitter Source
+	1. Use Cloudera JAR file `flume-sources-1.0-SNAPSHOT.jar` for Twitter Source
 	
 	2. Use Cloudera TwitterSource in flume agent
 		
-		TwitterAgent.sources.Twitter.type = com.cloudera.flume.source.TwitterSource
+		`TwitterAgent.sources.Twitter.type = com.cloudera.flume.source.TwitterSource`
 
 		http://stackoverflow.com/questions/36053306/cloudera-5-4-2-avro-block-size-is-invalid-or-too-large-when-using-flume-and-twi/36189152#36189152
 	
-	3. Use Cloudera JSONSerDe 'hive-serdes-1.0-SNAPSHOT.jar'
+	3. Use Cloudera JSONSerDe `hive-serdes-1.0-SNAPSHOT.jar`
 	
 	4. Both JAR files are build and tested on Cludera Hadoop Distribution CDH3 v0.3.7, 
 	   for other target systems, user can compile and built JAR files on target system using maven3, 
-	   for details see Annexure-A and Annexure-B
-		a. flume-sources-1.0-SNAPSHOT.jar, 
-		b. hive-serdes-1.0-SNAPSHOT.jar 
+	   for details see <b>Annexure-A</b> and <b>Annexure-B</b>
+
+		a. `flume-sources-1.0-SNAPSHOT.jar`, 
+		b. `hive-serdes-1.0-SNAPSHOT.jar` 
 
 	5. Further reading:
 		a. https://blog.cloudera.com/blog/2012/09/analyzing-twitter-data-with-hadoop/
@@ -53,11 +54,13 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 
 ## Note:
 	1. Code is tested on Cloudera Hadoop Distribution CDH3. 
-	2. Pre build JAR files are attached.
-		a. flume-sources-1.0-SNAPSHOT.jar
-		b. hive-serdes-1.0-SNAPSHOT.jar
+	2. Pre build JAR files are available at /lib/ folder.
+		a. `flume-sources-1.0-SNAPSHOT.jar`
+		b. `hive-serdes-1.0-SNAPSHOT.jar`
 
 
-
+STEP-01:
+---------
+	Setup Twitter application to get consumerKey & accessToken details
 
 
