@@ -103,7 +103,6 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 * See **Annexure-A**; If want to built `flume-sources-1.0-SNAPSHOT.jar`
 	
 
-
 ## 3. Setting up Flume agent:
 
 	Create `flume-twitter-analysis-conf.properties` file and use consumerKey & accessToken details.
@@ -156,6 +155,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		TwitterAgent.sources.Twitter.channels = MemChannel
 		TwitterAgent.sinks.HDFS.channel = MemChannel
 
+
 ## 4. Copy this configuration file (Flume agent) in flume cong directory:
 
 * Navigate to source directory and copy Flume agent 
@@ -185,7 +185,71 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		$ Ctrl + c
 
 
+## 6. Download Cloudera JSONSerDe file `hive-serdes-1.0-SNAPSHOT.jar` and save:
+
+* Download JAR file `hive-serdes-1.0-SNAPSHOT.jar` available under  [/lib/](https://github.com/KhareS/Twitter-Data-Analysis-Using-Flume-Hive/tree/master/lib) folder to $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/ 
+ 
+* Check JSONSerDe file 
+
+		$ cd $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis 
+
+* See **Annexure-B**; If want to built `hive-serdes-1.0-SNAPSHOT.jar`
+
+
+
+## 7. Add JSONSerDe file `hive-serdes-1.0-SNAPSHOT.jar` and create table structure in **Hive**
+
+* Start Hive CLI 
+
+		$ sudo hive 
+		hive>		
+
+* Add JSONSerDe JAR file location 
+
+		$ ADD JAR /home/cloudera/Desktop/hadoop-Use-Cases/twitter-Analysis/hive-serdes-1.0-SNAPSHOT.jar;
+
+* create new databse
+ 
+		hive> create database twitter-Analysis;
+
+* use database
+
+		hive> use twitter-Analysis;
+		
+* Create Table to store JSON tweets into Hive tables. </br> 
+  Storing as internal table at:- /user/hive/warehouse/twitter-Analysis.db/tweets </br>
+  Not using the Partition </br>
+  Copy all create table syntax at Hive CLI	
+
+		CREATE TABLE tweets (
+  		  id BIGINT,
+  		  created_at STRING,
+  		  source STRING,
+  		  favorited BOOLEAN,
+  		  retweeted_status STRUCT<
+     		    text:STRING,
+    		    user:STRUCT<screen_name:STRING,name:STRING>,
+    		    retweet_count:INT>,
+  		  entities STRUCT<
+    		    urls:ARRAY<STRUCT<expanded_url:STRING>>,
+    		    user_mentions:ARRAY<STRUCT<screen_name:STRING,name:STRING>>,
+    		    hashtags:ARRAY<STRUCT<text:STRING>>>,
+  		  text STRING,
+  	          user STRUCT<
+    		    screen_name:STRING,
+    		    name:STRING,
+    friends_count:INT,
+    followers_count:INT,
+    statuses_count:INT,
+    verified:BOOLEAN,
+    utc_offset:INT,
+    time_zone:STRING>,
+  in_reply_to_screen_name STRING
+) 
+ROW FORMAT SERDE 'com.cloudera.hive.serde.JSONSerDe';
 ---
+
+
 
 ### Annexure-A:
 
