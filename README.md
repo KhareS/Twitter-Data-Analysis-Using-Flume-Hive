@@ -349,6 +349,6 @@ If using other target system, please built **`hive-serdes-1.0-SNAPSHOT.jar`** us
 
 		$ cd target/
 
-* Go to STEP-06: (Create subdirectories and copy JAR file)
+* Go to STEP-06: (Download Cloudera JSONSerDe file)
 
 
