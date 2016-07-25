@@ -33,7 +33,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 	
   2. Use [Cloudera TwitterSource](http://stackoverflow.com/questions/36053306/cloudera-5-4-2-avro-block-size-is-invalid-or-too-large-when-using-flume-and-twi/36189152#36189152) in flume agent
 		
-	 `TwitterAgent.sources.Twitter.type =  **com.cloudera.flume.source.TwitterSource**`
+	 `TwitterAgent.sources.Twitter.type =  __com.cloudera.flume.source.TwitterSource__`
 
   3. Use Cloudera `JSONSerDe hive-serdes-1.0-SNAPSHOT.jar`
 	
@@ -44,7 +44,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		a. flume-sources-1.0-SNAPSHOT.jar, 
 		b. hive-serdes-1.0-SNAPSHOT.jar 
 
-  5. Further reading:
+  5. Further reading: </br>
 	a. [How-to: Analyze Twitter Data with Apache Hadoop](https://blog.cloudera.com/blog/2012/09/analyzing-twitter-data-with-hadoop/) </br>
 	b. [Analyzing Twitter Data with Apache Hadoop, Part 2: Gathering Data with Flume](http://blog.cloudera.com/blog/2012/10/analyzing-twitter-data-with-hadoop-part-2-gathering-data-with-flume/) </br>
 	c. [Analyzing Twitter Data with Apache Hadoop, Part 3: Querying Semi-structured Data with Apache Hive](http://blog.cloudera.com/blog/2012/11/analyzing-twitter-data-with-hadoop-part-3-querying-semi-structured-data-with-hive/) 
