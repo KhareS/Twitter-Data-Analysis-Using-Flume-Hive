@@ -1,30 +1,43 @@
 # Twitter-Data-Analysis-Using-Flume-Hive
 Store live streaming Tweeter data in HDFS using Apache flume and load this data in Hive for analysis. Example use Cloudera Hadoop Distribution CHD3.
 
-Target System:
-	01. Ubuntu v10.10
-	02. CLoudera Hadoop Distribution CDH3 v0.3.7
-	02. Hadoop v0.20.2-cdh3u0 in Pseudo-distribution mode
-	03. Java v1.6.0_24
-	04. Hive v0.7.0
-	05. Flume v1.6.0
+## Target System:
+	1. Ubuntu v10.10
+	2. Cloudera Hadoop Distribution CDH3 v0.3.7
+	3. Hadoop v0.20.2-cdh3u0 in Pseudo-distribution mode
+	4. Java v1.6.0_24
+	5. Hive v0.7.0
+	6. Flume v1.6.0
 
-Note:
-	01. Code is tested only on Cloudera Hadoop Distribution CDH3. 
-	02. "flume-sources-1.0-SNAPSHOT.jar", "hive-serdes-1.0-SNAPSHOT.jar" pre build JAR are attached.
+## Pre-requesites:
+	1. All deamons are running.
+	2. Java, Flume and Hive is installed and configured.
+	3. metastore.db using Java 'Derby' in Embedded mode is configured.
+	4. Knowledge of Hadoop HDFS, Hive and Flume.
 
-Pre-requesites:
-	01. All deamons are running.
-	02. Java, Flume and Hive is installed & properly configured.
-	03. metastore.db using Java 'Derby' in Embedded mode is configured.
-	04. Knowledge of Hadoop HDFS, Hive and Flume.
-
-Issues:
-	01. Avro block size is invalid or too large when using Flume and Twitter streaming
+## Issues:
+	1. Avro block size is invalid or too large when using Flume and Twitter streaming
 		http://stackoverflow.com/questions/30661478/unable-to-correctly-load-twitter-avro-data-into-hive-table
 
-	02. TwitterAgent.sources.Twitter.type = org.apache.flume.source.twitter.TwitterSource
+	2. 	TwitterAgent.sources.Twitter.type = org.apache.flume.source.twitter.TwitterSource
 		"Twitter 1% Firehose Source
-		This source is highly experimental. It connects to the 1% sample Twitter Firehose using streaming API and continuously downloads tweets, converts them to Avro format, and sends Avro events to a downstream Flume sink"
+		This source is highly experimental. It connects to the 1% sample Twitter Firehose using streaming API and		
+		continuously downloads tweets, converts them to Avro format, and sends Avro events to a downstream Flume sink"		
+
+	3. 	JSONSerDe compatibility.
+
+## Solutions:
+	1. Use Cloudera JAR file 'flume-sources-1.0-SNAPSHOT.jar' for Twitter Source
+	
+	2. Use Cloudera TwitterSource in flume agent
 		
-	03. JSONSerDe compatibility.
+		TwitterAgent.sources.Twitter.type = com.cloudera.flume.source.TwitterSource
+
+		http://stackoverflow.com/questions/36053306/cloudera-5-4-2-avro-block-size-is-invalid-or-too-large-when-using-flume-and-twi/36189152#36189152
+		
+## Note:
+	1. Code is tested only on Cloudera Hadoop Distribution CDH3. 
+	2. "flume-sources-1.0-SNAPSHOT.jar", "hive-serdes-1.0-SNAPSHOT.jar" pre build JAR are attached.
+
+
+
