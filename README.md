@@ -157,7 +157,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		TwitterAgent.sinks.HDFS.channel = MemChannel
 
 
-## 4. Copy this configuration file (Flume agent) in flume cong directory:
+## 4. Copy Flume agent in flume config directory:
 
 * Navigate to source directory and copy Flume agent 
  
