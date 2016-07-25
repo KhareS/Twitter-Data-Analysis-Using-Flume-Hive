@@ -104,16 +104,13 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 	
 
 
-## Annexure-A:
+### Annexure-A:
 
 If using other target system, please built & Compile **`flume-sources-1.0-SNAPSHOT.jar`** using maven3 
 
 * Download master file
 
 		$ wget https://github.com/cloudera/cdh-twitter-example/archive/master.zip 
-
-* Download master file
-		$ wget https://github.com/cloudera/cdh-twitter-example/archive/master.zip
 
 * Unzip
 
@@ -122,17 +119,21 @@ If using other target system, please built & Compile **`flume-sources-1.0-SNAPSH
 * Install Maven if not installed. [How to install Maven on Ubuntu?](http://stackoverflow.com/questions/15630055/how-to-install-maven-3-on-ubuntu-15-10-15-04-14-10-14-04-lts-13-10-13-04-12-10-1)
 
 * Navigate to folder
+
 		$ cd cdh-twitter-example-master/flume-sources
 
 * Build package; This will generate a file called `flume-sources-1.0-SNAPSHOT.jar` in the **target** directory
+
 		$ mvn package
 
 * Check newly build JAR file
+
 		$ cd target/
 
 * Go to STEP-02:
 
-## Annexure-B:
+
+### Annexure-B:
 
 
 
