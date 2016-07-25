@@ -2,12 +2,12 @@
 Store live streaming Tweeter data in HDFS using Apache flume, further load this data in Hive for analysis. Example use Cloudera Hadoop Distribution CHD3.
 
 ## Target System:
-	1. Ubuntu v10.10
-	2. Cloudera Hadoop Distribution CDH3 v0.3.7
-	3. Hadoop v0.20.2-cdh3u0 in Pseudo-distribution mode
-	4. Java v1.6.0_24
-	5. Hive v0.7.0
-	6. Flume v1.6.0
+> 1. Ubuntu v10.10
+> 2. Cloudera Hadoop Distribution CDH3 v0.3.7
+> 3. Hadoop v0.20.2-cdh3u0 in Pseudo-distribution mode
+> 4. Java v1.6.0_24
+> 5. Hive v0.7.0
+> 6. Flume v1.6.0
 
 ## Pre-requesites:
 	1. All deamons are running.
@@ -59,14 +59,14 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		b. `hive-serdes-1.0-SNAPSHOT.jar`
 
 
-1. STEP-01:
-----------
-Setup Twitter application to get consumerKey & accessToken details.
+1. Setup Twitter account:
+------------------------------
+> Setup Twitter application to get consumerKey & accessToken details.
 
-...a: Login/Open a Twitter account
-...b: Go to the following link and click on ‘create app’.
-...`https://apps.twitter.com/app` 
-...c: Fill in the necessary details
+..* Login/Open a Twitter account..
+..* b: Go to the following link and click on ‘create app’...
+..`https://apps.twitter.com/app` 
+..iii. Fill in the necessary details
 ...d: Enter full web site URL. Last forward slash (/) is required; otherwise it will not validate. Example: ...http://www.yahoo.com/
 ...e: Accept the agreement and click on ‘create your Twitter application’.
 ...f: Go to ‘Keys and Access Token’ tab.
