@@ -1,4 +1,4 @@
-# Twitter Data Analysis Using Apache Flume, Hive and CDH3
+# Twitter Data Analysis Using Apache Flume and Hive on CDH3
 Store live streaming Tweeter data in HDFS using Apache flume, further load this data in Hive for analysis. Example use Cloudera Hadoop Distribution CHD3.
 
 ## Target System:
