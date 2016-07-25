@@ -16,16 +16,16 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 	4. Knowledge of Hadoop HDFS, Hive and Flume.
 
 ## Issues:
-	1. [Avro block size is invalid or too large][1] when using Flume and Twitter streaming
+  1. [Avro block size is invalid or too large](http://www.abc.com) when using Flume and Twitter streaming
 		<http://www.stackoverflow.com/questions/30661478/unable-to-correctly-load-twitter-avro-data-into-hive-table>
 
-	2. 	TwitterAgent.sources.Twitter.type = org.apache.flume.source.twitter.TwitterSource
-		"Twitter 1% Firehose Source
-		This source is highly experimental. It connects to the 1% sample Twitter Firehose using 
-	        streaming API and continuously downloads tweets, converts them to Avro format, and sends 
-		Avro events to a downstream Flume sink"		
+  2. TwitterAgent.sources.Twitter.type = org.apache.flume.source.twitter.TwitterSource
+	 "Twitter 1% Firehose Source
+	 This source is highly experimental. It connects to the 1% sample Twitter Firehose using 
+	 streaming API and continuously downloads tweets, converts them to Avro format, and sends 
+	 Avro events to a downstream Flume sink"		
 
-	3. 	JSONSerDe compatibility.
+  3. JSONSerDe compatibility.
 
 [1]: http://stackoverflow.com/questions/30661478/unable-to-correctly-load-twitter-avro-data-into-hive-table
 
