@@ -43,7 +43,14 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 	   for details see Annexure-A and Annexure-B
 		a. flume-sources-1.0-SNAPSHOT.jar, 
 		b. hive-serdes-1.0-SNAPSHOT.jar 
-	
+
+	5. Further reading:
+		a. https://blog.cloudera.com/blog/2012/09/analyzing-twitter-data-with-hadoop/
+		b. http://blog.cloudera.com/blog/2012/10/analyzing-twitter-data-with-hadoop-part-2-gathering-data-with-flume/
+		c. http://blog.cloudera.com/blog/2012/11/analyzing-twitter-data-with-hadoop-part-3-querying-semi-structured-data-with-hive/
+
+	6. Follow each STEP one by one.
+
 ## Note:
 	1. Code is tested on Cloudera Hadoop Distribution CDH3. 
 	2. Pre build JAR files are attached.
