@@ -104,6 +104,63 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 	
 
 
+## 3. Setting up Flume agent:
+
+	Create `flume-twitter-analysis-conf.properties` file and use consumerKey & accessToken details.
+	
+* Create HDFS directory
+	
+		$ hadoop fs -mkdir /user/cloudera/flume/tweetsinput
+
+* Create configuration file for Flume agent. Name this file `flume-twitter-analysis-conf.properties` and save at: </br>
+  $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/
+	
+		$ cd $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/
+		gedit flume-twitter-analysis-conf.properties
+
+* Paste following code in this config file and Save
+	
+		TwitterAgent.sources = Twitter 
+		TwitterAgent.channels = MemChannel 
+		TwitterAgent.sinks = HDFS
+  
+		#  Use CLoudera Twitter Source;
+		#  place your consumerKey and accessToken details here
+		# Describing/Configuring the source
+		TwitterAgent.sources.Twitter.type = com.cloudera.flume.source.TwitterSource
+		TwitterAgent.sources.Twitter.consumerKey=
+		TwitterAgent.sources.Twitter.consumerSecret=
+		TwitterAgent.sources.Twitter.accessToken=
+		TwitterAgent.sources.Twitter.accessTokenSecret=
+		TwitterAgent.sources.Twitter.maxBatchSize = 1000
+		TwitterAgent.sources.Twitter.maxBatchDurationMillis = 1000
+		TwitterAgent.sources.Twitter.keywords=hadoop, big data, analytics, bigdata, cloudera, data science, data scientist, business intelligence, mapreduce, data warehouse, data warehousing, mahout, hbase, nosql, newsql, businessintelligence, cloudcomputing
+
+		# Use a channel which buffers events in memory
+		TwitterAgent.channels.MemChannel.type=memory
+		TwitterAgent.channels.MemChannel.capacity=100
+		TwitterAgent.channels.MemChannel.transactionCapacity=100
+
+		# Describing/Configuring the sink 
+		TwitterAgent.sinks.HDFS.channel=MemChannel
+		TwitterAgent.sinks.HDFS.type=hdfs
+		TwitterAgent.sinks.HDFS.hdfs.path=/user/cloudera/flume/tweetsinput
+		TwitterAgent.sinks.HDFS.hdfs.fileType=DataStream
+		TwitterAgent.sinks.HDFS.hdfs.writeformat=Text
+		TwitterAgent.sinks.HDFS.hdfs.batchSize=100
+		TwitterAgent.sinks.HDFS.hdfs.rollSize=0
+		TwitterAgent.sinks.HDFS.hdfs.rollCount=1000
+		TwitterAgent.sinks.HDFS.hdfs.rollInterval=600
+
+		# Bind the source and sink to the channel
+		TwitterAgent.sources.Twitter.channels = MemChannel
+		TwitterAgent.sinks.HDFS.channel = MemChannel
+
+## 4. Copy this configuration file (Flume agent) in flume cong directory:
+
+
+---
+
 ### Annexure-A:
 
 If using other target system, please built **`flume-sources-1.0-SNAPSHOT.jar`** using maven3 
