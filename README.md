@@ -100,13 +100,13 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		$ sudo cp flume-sources-1.0-SNAPSHOT.jar /usr/lib/flume-ng/plugins.d/twitter-streaming/lib/
 		$ sudo cp flume-sources-1.0-SNAPSHOT.jar /var/lib/flume-ng/plugins.d/twitter-streaming/lib/
 
-* See **Annexure-A**; If want to built & Compile `flume-sources-1.0-SNAPSHOT.jar`
+* See **Annexure-A**; If want to built `flume-sources-1.0-SNAPSHOT.jar`
 	
 
 
 ### Annexure-A:
 
-If using other target system, please built & Compile **`flume-sources-1.0-SNAPSHOT.jar`** using maven3 
+If using other target system, please built **`flume-sources-1.0-SNAPSHOT.jar`** using maven3 
 
 * Download master file
 
@@ -130,10 +130,33 @@ If using other target system, please built & Compile **`flume-sources-1.0-SNAPSH
 
 		$ cd target/
 
-* Go to STEP-02:
+* Go to STEP-02: (Create subdirectories and copy JAR file)
 
 
 ### Annexure-B:
 
+If using other target system, please built **`hive-serdes-1.0-SNAPSHOT.jar`** using maven3 
+
+* Download master file
+
+		$ wget https://github.com/cloudera/cdh-twitter-example/archive/master.zip 
+
+* Unzip
+
+		$ unzip -o master.zip
+
+* Navigate to folder
+
+		$ cd cdh-twitter-example-master/hive-serdes
+
+* Build package; This will generate a file called `hive-serdes-1.0-SNAPSHOT.jar` in the **target** directory
+
+		$ mvn package
+
+* Check newly build JAR file
+
+		$ cd target/
+
+* Go to STEP-06: (Create subdirectories and copy JAR file)
 
 
