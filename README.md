@@ -186,7 +186,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		$ Ctrl + c
 
 
-## 6. Download Cloudera JSONSerDe file 'hive-serdes-1.0-SNAPSHOT.jar' and save:
+## 6. Download Cloudera JSONSerDe file:
 
 * Download JAR file `hive-serdes-1.0-SNAPSHOT.jar` available under  [/lib/](https://github.com/KhareS/Twitter-Data-Analysis-Using-Flume-Hive/tree/master/lib) folder to $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/ 
  
@@ -198,14 +198,14 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 
 
 
-## 7. Add JSONSerDe file 'hive-serdes-1.0-SNAPSHOT.jar' and create table structure in Hive:
+## 7. Add JSONSerDe file and create table structure in Hive:
 
 * Start Hive CLI 
 
 		$ sudo hive 
 		hive>		
 
-* Add JSONSerDe JAR file location 
+* Add JSONSerDe JAR file 'hive-serdes-1.0-SNAPSHOT.jar`  location 
 
 		hive> ADD JAR $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/hive-serdes-1.0-SNAPSHOT.jar;
 
@@ -257,7 +257,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 
 * Copy flume data from HDFS to local disk and then into Hive tables. Get Flume data file names. Open new terminal
  
-		$ hadoop fs -lsr /user/hive/warehouse/twitter-Analysis.db/tweets
+		$ hadoop fs -lsr /user/cloudera/flume/tweetsinput/
 
 * Copy Flume data from HDFS		
 	
@@ -266,7 +266,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		$ cd rawTweets/
 		$ hadoop fs -get /user/cloudera/flume/tweetsinput/*  $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/rawTweets/	
 
-* Load Data into Hive tables, your file name may have a different name like; FlumeData.xxxxx		
+* Load Data into Hive tables, your file name may have a different extension like; FlumeData.xxxxx		
 		
 		hive> LOAD DATA LOCAL INPATH '$HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/rawTweets/FlumeData.1468333621171' INTO TABLE tweets;
 
