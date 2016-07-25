@@ -111,7 +111,8 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 	
 		$ hadoop fs -mkdir /user/cloudera/flume/tweetsinput
 
-* Create configuration file for Flume agent. Name this file `flume-twitter-analysis-conf.properties` and save at: </br>
+* Create configuration file for Flume agent. </br> 
+  Name this file `flume-twitter-analysis-conf.properties` and save at: </br>
   $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/
 	
 		$ cd $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/
@@ -197,7 +198,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 
 
 
-## 7. Add JSONSerDe file `hive-serdes-1.0-SNAPSHOT.jar` and create table structure in **Hive**
+## 7. Add JSONSerDe file `hive-serdes-1.0-SNAPSHOT.jar` and create table structure in Hive:
 
 * Start Hive CLI 
 
@@ -216,10 +217,8 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 
 		hive> use twitter-Analysis;
 		
-* Create Table to store JSON tweets into Hive tables. </br> 
-  Storing as internal table at:- /user/hive/warehouse/twitter-Analysis.db/tweets </br>
-  Not using the Partition </br>
-  Copy all create table syntax at Hive CLI	
+* Create Table to store JSON tweets into Hive tables, without using Partition. </br> 
+  Stored as internal table at:- /user/hive/warehouse/twitter-Analysis.db/tweets </br>
 
 		CREATE TABLE tweets (
   		  id BIGINT,
@@ -238,15 +237,54 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
   	          user STRUCT<
     		    screen_name:STRING,
     		    name:STRING,
-    friends_count:INT,
-    followers_count:INT,
-    statuses_count:INT,
-    verified:BOOLEAN,
-    utc_offset:INT,
-    time_zone:STRING>,
-  in_reply_to_screen_name STRING
-) 
-ROW FORMAT SERDE 'com.cloudera.hive.serde.JSONSerDe';
+    		    friends_count:INT,
+    		    followers_count:INT,
+    		    statuses_count:INT,
+    		    verified:BOOLEAN,
+    		    utc_offset:INT,
+    		    time_zone:STRING>,
+  		    in_reply_to_screen_name STRING
+		   ) 
+		ROW FORMAT SERDE 'com.cloudera.hive.serde.JSONSerDe';
+		
+
+* Describe table
+		
+		hive> describe formatted tweets;
+
+
+## 8. Load data inti Hive tables:
+
+* Copy flume data from HDFS to local disk and then into Hive tables. Get Flume data file names. Open new terminal
+ 
+		$ hadoop fs -lsr /user/hive/warehouse/twitter-Analysis.db/tweets
+
+* Copy Flume data from HDFS		
+	
+		$ cd $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis	
+		$ mkdir  rawTweets
+		$ cd rawTweets/
+		$ hadoop fs -get /user/hive/warehouse/twitter-Analysis.db/tweets/* $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/rawTweets/	
+
+## 9. Run queries:
+
+* Select total count 		
+	
+		hive> SELECT count(*) FROM tweets;
+
+		Result in:
+		
+
+* How records are look like? Check one record.
+
+		hive> SELECT * FROM tweets LIMIT 1;
+		
+		Result in:
+		752871872170106881	Tue Jul 12 14:26:56 +0000 2016	<a href="http://twitter.com/download/android" rel="nofollow">Twitter for Android</a>	false	{"text":null,"user":null,"retweet_count":null}	{"urls":[],"user_mentions":[{"screen_name":"Amarte_Kong","name":"빈슈"}],"hashtags":[]}	@Amarte_Kong 맨션 수에 따라 올라가는 것..? ㅋㅋㅌㅋㅋ근데 왜때뮤네 빈슈가 없눈거야ㅠㅠ 트이터 일해라ㅠㅠ	{"screen_name":"Ha_an10","name":"메인이벤트❀하안❀","friends_count":218,"followers_count":892,"statuses_count":25758,"verified":false,"utc_offset":null,"time_zone":null}	Amarte_Kong Time taken: 0.383 seconds
+
+
+
+		
 ---
 
 
