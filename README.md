@@ -67,7 +67,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 * Click on [create app](https://apps.twitter.com/app) link.
 * Fill necessary details.
 * Enter full web site URL. Last forward slash (/) is required; otherwise it will not validate. Example;
-	[http://www.yahoo.com/]
+	<http://www.yahoo.com/>
 * Accept the agreement and click on ‘create your Twitter application’.
 * Go to ‘Keys and Access Token’ tab.
 * Copy the consumer key and the consumer secret.
@@ -75,7 +75,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 * Copy the Access Token and Access token Secret.
 * Note down all four key at some place, will need this in Flume config file.
 
-[http://www.yahoo.com/]: http://www.yahoo.com/
+
 
 
 
