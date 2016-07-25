@@ -21,12 +21,10 @@ Pre-requesites:
 
 Issues:
 	01. Avro block size is invalid or too large when using Flume and Twitter streaming
-		Java -jar avro-tools-1.7.7.jar tojson FlumeData.1468209072594
 		http://stackoverflow.com/questions/30661478/unable-to-correctly-load-twitter-avro-data-into-hive-table
 
 	02. TwitterAgent.sources.Twitter.type = org.apache.flume.source.twitter.TwitterSource
-		Twitter 1% Firehose Source
-		This source is highly experimental. It connects to the 1% sample Twitter Firehose using streaming API and continuously downloads tweets, 
-		converts them to Avro format, and sends Avro events to a downstream Flume sink
+		"Twitter 1% Firehose Source
+		This source is highly experimental. It connects to the 1% sample Twitter Firehose using streaming API and continuously downloads tweets, converts them to Avro format, and sends Avro events to a downstream Flume sink"
 		
 	03. JSONSerDe compatibility.
