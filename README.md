@@ -63,10 +63,9 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 
 	Setup Twitter application to get consumerKey and accessToken details.
 
-* Login/Open a Twitter account
-* Go to the following link and click on ‘create app’.
-	[https://apps.twitter.com/app]
-* Fill necessary details
+* Login/Open a [Twitter](https://www.twitter.com) account.
+* Click on [create app](https://apps.twitter.com/app) link.
+* Fill necessary details.
 * Enter full web site URL. Last forward slash (/) is required; otherwise it will not validate. Example;
 	[http://www.yahoo.com/]
 * Accept the agreement and click on ‘create your Twitter application’.
