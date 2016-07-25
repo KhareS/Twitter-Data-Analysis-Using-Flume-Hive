@@ -1,4 +1,4 @@
- Cloudera JAR file for Twitter Source
+ Cloudera JAR file for Twitter Source and JSONSerDe
 
     a. flume-sources-1.0-SNAPSHOT.jar
 
