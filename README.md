@@ -7,7 +7,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 	3. Hadoop v0.20.2-cdh3u0 in Pseudo-distribution mode
 	4. Java v1.6.0_24
 	5. Hive v0.7.0
-	6. Flume v1.6.0
+	6. Flume v1.6.0; location (/usr/lib/flume-ng/apache-flume-1.6.0-bin/)
 
 ## Pre-requesites:
 	1. All deamons are running.
@@ -116,16 +116,16 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
   $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/
 	
 		$ cd $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/
-		gedit flume-twitter-analysis-conf.properties
+		$ gedit flume-twitter-analysis-conf.properties
 
-* Paste following code in this config file and Save
+* Paste following code in config file `flume-twitter-analysis-conf.properties` and Save.
 	
 		TwitterAgent.sources = Twitter 
 		TwitterAgent.channels = MemChannel 
 		TwitterAgent.sinks = HDFS
   
-		#  Use CLoudera Twitter Source;
-		#  place your consumerKey and accessToken details here
+		# Use CLoudera Twitter Source;
+		# place your consumerKey and accessToken details here
 		# Describing/Configuring the source
 		TwitterAgent.sources.Twitter.type = com.cloudera.flume.source.TwitterSource
 		TwitterAgent.sources.Twitter.consumerKey=
@@ -157,6 +157,32 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		TwitterAgent.sinks.HDFS.channel = MemChannel
 
 ## 4. Copy this configuration file (Flume agent) in flume cong directory:
+
+* Navigate to source directory and copy Flume agent 
+ 
+		$ cd $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/
+		$ sudo cp flume-twitter-analysis-conf.properties /usr/lib/flume-ng/apache-flume-1.6.0-bin/conf/
+
+* Test file presence
+ 
+		$ cd /usr/lib/flume-ng/apache-flume-1.6.0-bin/conf/
+		$ ls -l
+
+
+## 5. Start Flume agent:
+
+* Command to start Flume Agent 
+ 
+		$ /usr/lib/flume-ng/apache-flume-1.6.0-bin/bin/flume-ng agent -n TwitterAgent -c conf -f /usr/lib/flume-ng/apache-flume-1.6.0-bin/conf/flume-twitter-analysis-conf.properties
+
+
+* Command to start Flume Agent with detailed debug information 
+ 
+		$ /usr/lib/flume-ng/apache-flume-1.6.0-bin/bin/flume-ng agent -n TwitterAgent -c conf -f /usr/lib/flume-ng/apache-flume-1.6.0-bin/conf/flume-twitter-analysis-conf.properties -Dflume.root.logger=DEBUG,console
+
+* To Stop streaming of data, press
+		
+		$ Ctrl + c
 
 
 ---
