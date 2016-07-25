@@ -16,10 +16,9 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 	4. Knowledge of Hadoop HDFS, Hive and Flume.
 
 ## Issues:
-  1. [Avro block size is invalid or too large](http://www.abc.com) when using Flume and Twitter streaming
-		<http://www.stackoverflow.com/questions/30661478/unable-to-correctly-load-twitter-avro-data-into-hive-table>
+  1. [Avro block size is invalid or too large](http://www.stackoverflow.com/questions/30661478/unable-to-correctly-load-twitter-avro-data-into-hive-table) when using Flume and Twitter streaming
 
-  2. TwitterAgent.sources.Twitter.type = org.apache.flume.source.twitter.TwitterSource
+  2. `TwitterAgent.sources.Twitter.type = org.apache.flume.source.twitter.TwitterSource`
 	 "Twitter 1% Firehose Source
 	 This source is highly experimental. It connects to the 1% sample Twitter Firehose using 
 	 streaming API and continuously downloads tweets, converts them to Avro format, and sends 
@@ -27,32 +26,30 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 
   3. JSONSerDe compatibility.
 
-[1]: http://stackoverflow.com/questions/30661478/unable-to-correctly-load-twitter-avro-data-into-hive-table
+
 
 ## Solutions:
-	1. Use Cloudera JAR file flume-sources-1.0-SNAPSHOT.jar for Twitter Source
+  1. Use Cloudera JAR file `flume-sources-1.0-SNAPSHOT.jar` for Twitter Source
 	
-	2. Use Cloudera TwitterSource in flume agent
+  2. Use [Cloudera TwitterSource](http://stackoverflow.com/questions/36053306/cloudera-5-4-2-avro-block-size-is-invalid-or-too-large-when-using-flume-and-twi/36189152#36189152) in flume agent
 		
-		<span style="background-color: #FFFF00">TwitterAgent.sources.Twitter.type =  com.cloudera.flume.source.TwitterSource</span>
+	 `TwitterAgent.sources.Twitter.type =  com.cloudera.flume.source.TwitterSource`
 
-		http://stackoverflow.com/questions/36053306/cloudera-5-4-2-avro-block-size-is-invalid-or-too-large-when-using-flume-and-twi/36189152#36189152
+  3. Use Cloudera `JSONSerDe hive-serdes-1.0-SNAPSHOT.jar`
 	
-	3. Use Cloudera JSONSerDe hive-serdes-1.0-SNAPSHOT.jar
-	
-	4. Both JAR files are build and tested on Cludera Hadoop Distribution CDH3 v0.3.7, 
-	   for other target systems, user can compile and built JAR files on target system using maven3, 
-	   for details see <b>Annexure-A</b> and <b>Annexure-B</b>
+  4. Both JAR files are build and tested on Cludera Hadoop Distribution CDH3 v0.3.7, 
+	 for other target systems, user can compile and built JAR files on target system using maven3, 
+	 for details see **Annexure-A** and **Annexure-B**
 
 		a. flume-sources-1.0-SNAPSHOT.jar, 
 		b. hive-serdes-1.0-SNAPSHOT.jar 
 
-	5. Further reading:
-		a. https://blog.cloudera.com/blog/2012/09/analyzing-twitter-data-with-hadoop/
-		b. http://blog.cloudera.com/blog/2012/10/analyzing-twitter-data-with-hadoop-part-2-gathering-data-with-flume/
-		c. http://blog.cloudera.com/blog/2012/11/analyzing-twitter-data-with-hadoop-part-3-querying-semi-structured-data-with-hive/
+  5. Further reading:
+	a. [How-to: Analyze Twitter Data with Apache Hadoop](https://blog.cloudera.com/blog/2012/09/analyzing-twitter-data-with-hadoop/)
+	b. [Analyzing Twitter Data with Apache Hadoop, Part 2: Gathering Data with Flume](http://blog.cloudera.com/blog/2012/10/analyzing-twitter-data-with-hadoop-part-2-gathering-data-with-flume/)
+	c. [Analyzing Twitter Data with Apache Hadoop, Part 3: Querying Semi-structured Data with Apache Hive](http://blog.cloudera.com/blog/2012/11/analyzing-twitter-data-with-hadoop-part-3-querying-semi-structured-data-with-hive/)
 
-	6. Follow each STEP one by one.
+  6. Follow each STEP one by one.
 
 ## Note:
 	1. Code is tested on Cloudera Hadoop Distribution CDH3. 
