@@ -18,10 +18,10 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 ## Issues:
   1. [Avro block size is invalid or too large](http://www.stackoverflow.com/questions/30661478/unable-to-correctly-load-twitter-avro-data-into-hive-table) when using Flume and Twitter streaming
 
-  2. `TwitterAgent.sources.Twitter.type = org.apache.flume.source.twitter.TwitterSource`
-	 "Twitter 1% Firehose Source
-	 This source is highly experimental. It connects to the 1% sample Twitter Firehose using 
-	 streaming API and continuously downloads tweets, converts them to Avro format, and sends 
+  2. `TwitterAgent.sources.Twitter.type = org.apache.flume.source.twitter.TwitterSource` </br>
+	 "Twitter 1% Firehose Source</br>
+	 This source is highly experimental. It connects to the 1% sample Twitter Firehose using </br>
+	 streaming API and continuously downloads tweets, converts them to Avro format, and sends </br> 
 	 Avro events to a downstream Flume sink"		
 
   3. JSONSerDe compatibility.
@@ -37,9 +37,9 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 
   3. Use Cloudera `JSONSerDe hive-serdes-1.0-SNAPSHOT.jar`
 	
-  4. Both JAR files are build and tested on Cludera Hadoop Distribution CDH3 v0.3.7, 
-	 for other target systems, user can compile and built JAR files on target system using maven3, 
-	 for details see **Annexure-A** and **Annexure-B**
+  4. Both JAR files are build and tested on Cludera Hadoop Distribution CDH3 v0.3.7, </br>
+	 for other target systems, user can compile and built JAR files on target system using maven3, </br>
+	 for details see **Annexure-A** and **Annexure-B** 
 
 		a. flume-sources-1.0-SNAPSHOT.jar, 
 		b. hive-serdes-1.0-SNAPSHOT.jar 
