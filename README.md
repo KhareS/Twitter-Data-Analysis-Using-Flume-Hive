@@ -77,7 +77,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 
 ## 2. Create subdirectories and copy JAR file:
 
-	Create following directories and copy JAR file available under /lib/ folder.
+	Create following directories and copy JAR file available at repository under /lib/ folder.
 	
 * $HOME = /home/loggedin_user/
 	
@@ -87,7 +87,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		$ mkdir  twitter-Analysis
 		$ cd twitter-Analysis/
 
-* Download JAR file `flume-sources-1.0-SNAPSHOT.jar` available under [/lib/](https://github.com/KhareS/Twitter-Data-Analysis-Using-Flume-Hive/tree/master/lib) folder to `$HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/`
+* Download JAR file `flume-sources-1.0-SNAPSHOT.jar` available at repository under [/lib/](https://github.com/KhareS/Twitter-Data-Analysis-Using-Flume-Hive/tree/master/lib) folder to `$HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/`
  
 * create plugind.d & other sub-directories
 	
