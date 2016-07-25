@@ -45,7 +45,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		b. hive-serdes-1.0-SNAPSHOT.jar 
 	
 ## Note:
-	1. Code is tested only on Cloudera Hadoop Distribution CDH3. 
+	1. Code is tested on Cloudera Hadoop Distribution CDH3. 
 	2. "flume-sources-1.0-SNAPSHOT.jar", "hive-serdes-1.0-SNAPSHOT.jar" pre build JAR files are attached.
 
 
