@@ -186,7 +186,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		$ Ctrl + c
 
 
-## 6. Download Cloudera JSONSerDe file `hive-serdes-1.0-SNAPSHOT.jar` and save:
+## 6. Download Cloudera JSONSerDe file 'hive-serdes-1.0-SNAPSHOT.jar' and save:
 
 * Download JAR file `hive-serdes-1.0-SNAPSHOT.jar` available under  [/lib/](https://github.com/KhareS/Twitter-Data-Analysis-Using-Flume-Hive/tree/master/lib) folder to $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/ 
  
@@ -198,7 +198,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 
 
 
-## 7. Add JSONSerDe file `hive-serdes-1.0-SNAPSHOT.jar` and create table structure in Hive:
+## 7. Add JSONSerDe file 'hive-serdes-1.0-SNAPSHOT.jar' and create table structure in Hive:
 
 * Start Hive CLI 
 
@@ -207,7 +207,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 
 * Add JSONSerDe JAR file location 
 
-		$ ADD JAR $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/hive-serdes-1.0-SNAPSHOT.jar;
+		hive> ADD JAR $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/hive-serdes-1.0-SNAPSHOT.jar;
 
 * create new databse
  
