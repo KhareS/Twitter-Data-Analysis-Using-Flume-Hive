@@ -88,20 +88,20 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		$ mkdir  twitter-Analysis
 		$ cd twitter-Analysis/
 
-* Download JAR file `flume-sources-1.0-SNAPSHOT.jar` available under [/lib/](../lib/master/README.md) folder to `$HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/`
+* Download JAR file `flume-sources-1.0-SNAPSHOT.jar` available under [/lib/](../tree/master/lib) folder to `$HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/`
  
 * create plugind.d & other sub-directories
 	
-	/usr/lib/flume-ng/plugins.d/twitter-streaming/lib/
-	/var/lib/flume-ng/plugins.d/twitter-streaming/lib
+		/usr/lib/flume-ng/plugins.d/twitter-streaming/lib/
+		/var/lib/flume-ng/plugins.d/twitter-streaming/lib
 
 * Copy `flume-sources-1.0-SNAPSHOT.jar` to following directories
 
-	$ cd $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis 
-	$ sudo cp flume-sources-1.0-SNAPSHOT.jar /usr/lib/flume-ng/plugins.d/twitter-streaming/lib/
-	$ sudo cp flume-sources-1.0-SNAPSHOT.jar /var/lib/flume-ng/plugins.d/twitter-streaming/lib/
+		$ cd $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis 
+		$ sudo cp flume-sources-1.0-SNAPSHOT.jar /usr/lib/flume-ng/plugins.d/twitter-streaming/lib/
+		$ sudo cp flume-sources-1.0-SNAPSHOT.jar /var/lib/flume-ng/plugins.d/twitter-streaming/lib/
 
-
+* See **Annexure-A**; If want to built & Compile `flume-sources-1.0-SNAPSHOT.jar`
 	
 
 
