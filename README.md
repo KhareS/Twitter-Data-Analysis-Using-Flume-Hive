@@ -182,7 +182,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
  
 		$ /usr/lib/flume-ng/apache-flume-1.6.0-bin/bin/flume-ng agent -n TwitterAgent -c conf -f /usr/lib/flume-ng/apache-flume-1.6.0-bin/conf/flume-twitter-analysis-conf.properties -Dflume.root.logger=DEBUG,console
 
-* If get following Exception. Add consumerKey, consumerSecret, accessToken and accessTokenSecret in flume agent  'flume-twitter-analysis-conf.properties'
+* If get following Exception. Add consumerKey, consumerSecret, accessToken and accessTokenSecret in flume agent (config file)   'flume-twitter-analysis-conf.properties'
 
 		java.lang.IllegalStateException: Authentication credentials are missing.
 
