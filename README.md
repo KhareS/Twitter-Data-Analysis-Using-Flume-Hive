@@ -90,6 +90,11 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 
 * Download JAR file `flume-sources-1.0-SNAPSHOT.jar` available at repository under [/lib/](https://github.com/KhareS/Twitter-Data-Analysis-Using-Flume-Hive/tree/master/lib) folder to `$HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/`
  
+* Check JAR file `flume-sources-1.0-SNAPSHOT.jar`
+
+		$ cd $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/
+		$ ls -l
+		
 * create plugind.d & other sub-directories
 	
 		/usr/lib/flume-ng/plugins.d/twitter-streaming/lib/
