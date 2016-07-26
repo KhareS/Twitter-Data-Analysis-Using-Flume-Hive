@@ -299,9 +299,14 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 
 ## 8. Load data into Hive tables:
 
-* Copy JSON tweets from HDFS to local disk and then into Hive tables. Get tweets data file names. Open a new terminal.
+* Copy JSON tweets from HDFS to local disk and then into Hive tables. Get tweets data file names, your file names may be different. Open a new terminal.
  
 		$ hadoop fs -lsr /user/cloudera/flume/tweetsinput/
+		
+		Result:
+		-rw-r--r--   1 cloudera supergroup     223439 2016-07-26 06:36 /user/cloudera/flume/tweetsinput/FlumeData.1469540186105
+		-rw-r--r--   1 cloudera supergroup    2253627 2016-07-26 06:41 /user/cloudera/flume/tweetsinput/FlumeData.1469540482346
+		-rw-r--r--   1 cloudera supergroup     315235 2016-07-26 06:51 /user/cloudera/flume/tweetsinput/FlumeData.1469541087551
 
 * Copy JSON files from HDFS to project folder $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/ 		
 	
