@@ -15,7 +15,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 	3. metastore.db using Java 'Derby' in Embedded mode is configured. Other RDBMS like; MySQL can also be use.
 	4. Knowledge of Hadoop HDFS, Hive and Flume.
 
-## Issues:
+## Challenges:
   1. [Avro block size is invalid or too large](http://www.stackoverflow.com/questions/30661478/unable-to-correctly-load-twitter-avro-data-into-hive-table) when using Flume and Twitter streaming
 
   2. `TwitterAgent.sources.Twitter.type = org.apache.flume.source.twitter.TwitterSource` </br>
