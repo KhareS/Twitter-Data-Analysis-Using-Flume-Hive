@@ -80,7 +80,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 
 	Create following directories and copy JAR file available at repository under /lib/ folder.
 	
-* Create project folder `$HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/', where; </br>
+* Create project folder `$HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/`, where; </br>
   **$HOME = /home/loggedin_user/**
 	
 		$ cd $HOME/Desktop/
@@ -89,7 +89,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		$ mkdir  twitter-Analysis
 		$ cd twitter-Analysis/
 
-* Download JAR file `flume-sources-1.0-SNAPSHOT.jar` available at repository under [/lib/](https://github.com/KhareS/Twitter-Data-Analysis-Using-Flume-Hive/tree/master/lib) folder to `$HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/`
+* Download JAR file `flume-sources-1.0-SNAPSHOT.jar` available at repository under [/lib/](https://github.com/KhareS/Twitter-Data-Analysis-Using-Flume-Hive/tree/master/lib) folder to project folder  `$HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/`
  
 * Check JAR file `flume-sources-1.0-SNAPSHOT.jar`
 
@@ -119,7 +119,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		$ hadoop fs -mkdir /user/cloudera/flume/tweetsinput
 
 * Create configuration file for Flume agent. </br> 
-  Name this file `flume-twitter-analysis-conf.properties` and save at: </br>
+  Name this file `flume-twitter-analysis-conf.properties` and save at project folder: </br>
   $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/
 	
 		$ cd $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/
