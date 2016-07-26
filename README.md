@@ -323,14 +323,26 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		-rw-r--r-- 1 xxxx xxxx  2253627 2016-07-26 07:41 FlumeData.1469540482346
 		-rw-r--r-- 1 xxxx xxxx  315235 2016-07-26 07:41 FlumeData.1469541087551
 
-* Load Data into Hive tables, your file name may have a different extension like; FlumeData.xxxxx		
+* Load Data into Hive tables, your file name may have a different extension like; FlumeData.xxxxx </br>
+  Switch to Hive CLI terminal </br>
+  Replace **$HOME = /home/loggedin_user/**
 		
-		hive> LOAD DATA LOCAL INPATH '$HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/rawTweets/FlumeData.1468333621171' INTO TABLE tweets;
+		hive> LOAD DATA LOCAL INPATH '$HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/rawTweets/FlumeData.1469540186105' INTO TABLE tweets;
+		
+		Result:
+		Loading data to table twitteranalysis.tweets
+		OK
+		Time taken: 1.099 seconds
 
-		hive> LOAD DATA LOCAL INPATH '$HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/rawTweets/FlumeData.1468333621172' INTO TABLE tweets;
+		hive> LOAD DATA LOCAL INPATH '$HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/rawTweets/FlumeData.1469540482346' INTO TABLE tweets;
+
+		Result:
+		Loading data to table twitteranalysis.tweets
+		OK
+		Time taken: 1.034 seconds
 
 
-## 9. Run queries:
+## 9. Run HiveQL queries:
 
 * Select total count 		
 	
