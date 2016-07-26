@@ -39,7 +39,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 	
   4. Both JAR files are build and tested on Cludera Hadoop Distribution CDH3 v0.3.7, </br>
 	 for other target systems, user can compile and built JAR files on target system using maven3, </br>
-	 for details see **Annexure-A** and **Annexure-B** 
+	 for details see **Appendix-A** and **Appendix-B** 
 
 		a. flume-sources-1.0-SNAPSHOT.jar 
 		b. hive-serdes-1.0-SNAPSHOT.jar 
@@ -107,7 +107,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		$ sudo cp flume-sources-1.0-SNAPSHOT.jar /usr/lib/flume-ng/plugins.d/twitter-streaming/lib/
 		$ sudo cp flume-sources-1.0-SNAPSHOT.jar /var/lib/flume-ng/plugins.d/twitter-streaming/lib/
 
-* See **Annexure-A**; If want to built `flume-sources-1.0-SNAPSHOT.jar`
+* See **Appendix-A**; If want to built `flume-sources-1.0-SNAPSHOT.jar`
 	
 
 ## 3. Setting up Flume agent:
@@ -208,7 +208,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		$ cd $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis
 		$ ls -l
 
-* See **Annexure-B**; If want to built `hive-serdes-1.0-SNAPSHOT.jar`
+* See **Appendix-B**; If want to built `hive-serdes-1.0-SNAPSHOT.jar`
 
 
 
@@ -375,7 +375,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 
 
 
-### Annexure-A:
+### Appendix-A:
 
 If using other target system, please built **`flume-sources-1.0-SNAPSHOT.jar`** using maven3 
 
@@ -404,7 +404,7 @@ If using other target system, please built **`flume-sources-1.0-SNAPSHOT.jar`** 
 * Go to STEP-02: (Create subdirectories and copy JAR file)
 
 
-### Annexure-B:
+### Appendix-B:
 
 If using other target system, please built **`hive-serdes-1.0-SNAPSHOT.jar`** using maven3 
 
