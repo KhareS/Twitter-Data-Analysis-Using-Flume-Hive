@@ -218,7 +218,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		$ sudo hive 
 		hive>		
 
-* Add JSONSerDe JAR file `hive-serdes-1.0-SNAPSHOT.jar`  location 
+* Add JSONSerDe JAR file `hive-serdes-1.0-SNAPSHOT.jar`  location. Replace $HOME = /home/loggedin_user/ 
 
 		hive> ADD JAR $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/hive-serdes-1.0-SNAPSHOT.jar;
 
