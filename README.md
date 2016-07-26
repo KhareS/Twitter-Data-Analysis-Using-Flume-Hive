@@ -303,7 +303,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
  
 		$ hadoop fs -lsr /user/cloudera/flume/tweetsinput/
 
-* Copy JSON files from HDFS to our project folder		
+* Copy JSON files from HDFS to project folder $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/ 		
 	
 		$ cd $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis	
 		$ mkdir  rawTweets
