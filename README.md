@@ -9,7 +9,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 	5. Hive v0.7.0
 	6. Flume v1.6.0; location (/usr/lib/flume-ng/apache-flume-1.6.0-bin/)
 
-## Pre-requesites:
+## Pre-requisites:
 	1. All deamons are running.
 	2. Java, Flume and Hive is installed and configured.
 	3. metastore.db using Java 'Derby' in Embedded mode is configured.
