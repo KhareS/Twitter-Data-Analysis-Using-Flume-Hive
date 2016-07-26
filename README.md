@@ -224,14 +224,26 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 
 * create new databse
  
-		hive> create database twitter-Analysis;
+		hive> create database if not exists twitterAnalysis; 
+		
+		Result:
+		OK
+		Time taken: 0.821 seconds
 
+* Show databases
+
+		hive> show databases;
+		
 * use database
 
-		hive> use twitter-Analysis;
+		hive> use twitterAnalysis;
+
+		Result:		
+		OK
+		Time taken: 0.074 seconds
 		
 * Create Table to store JSON [tweets](https://dev.twitter.com/overview/api/tweets) into Hive tables, without using Partition. </br> 
-  Stored as internal table at:- /user/hive/warehouse/twitter-Analysis.db/tweets </br>
+  Stored as internal table at:- /user/hive/warehouse/twitteranalysis.db/tweets </br>
 
 		CREATE TABLE tweets (
   		  id BIGINT,
