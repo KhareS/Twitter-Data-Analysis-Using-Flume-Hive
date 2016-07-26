@@ -173,12 +173,12 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 
 ## 5. Start Flume agent:
 
-* Command to start Flume Agent 
+* Command to start Flume agent 
  
 		$ /usr/lib/flume-ng/apache-flume-1.6.0-bin/bin/flume-ng agent -n TwitterAgent -c conf -f /usr/lib/flume-ng/apache-flume-1.6.0-bin/conf/flume-twitter-analysis-conf.properties
 
 
-* Command to start Flume Agent with detailed debug information 
+* Command to start Flume agent with detailed debug information 
  
 		$ /usr/lib/flume-ng/apache-flume-1.6.0-bin/bin/flume-ng agent -n TwitterAgent -c conf -f /usr/lib/flume-ng/apache-flume-1.6.0-bin/conf/flume-twitter-analysis-conf.properties -Dflume.root.logger=DEBUG,console
 
