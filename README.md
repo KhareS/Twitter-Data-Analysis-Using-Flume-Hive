@@ -12,7 +12,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 ## Pre-requisites:
 	1. All deamons are running.
 	2. Java, Flume and Hive is installed and configured.
-	3. metastore.db using Java 'Derby' in Embedded mode is configured.
+	3. metastore.db using Java 'Derby' in Embedded mode is configured. Other RDBMS like; MySQL can also be use.
 	4. Knowledge of Hadoop HDFS, Hive and Flume.
 
 ## Issues:
@@ -173,7 +173,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 
 ## 5. Start Flume agent:
 
-* Command to start Flume agent 
+* Command to start Flume agent without debug information
  
 		$ /usr/lib/flume-ng/apache-flume-1.6.0-bin/bin/flume-ng agent -n TwitterAgent -c conf -f /usr/lib/flume-ng/apache-flume-1.6.0-bin/conf/flume-twitter-analysis-conf.properties
 
