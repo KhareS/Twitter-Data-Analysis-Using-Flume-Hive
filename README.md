@@ -185,7 +185,9 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 * If get following Exception. Add consumerKey, consumerSecret, accessToken and accessTokenSecret in flume agent  'flume-twitter-analysis-conf.properties'
 
 		java.lang.IllegalStateException: Authentication credentials are missing.
-		
+
+* Once connection get's establish, Twitter Source will start sending streams to Channel.
+ 
 * To Stop streaming of data, press
 		
 		$ Ctrl + c
