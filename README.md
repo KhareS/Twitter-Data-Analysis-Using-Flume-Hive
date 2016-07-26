@@ -357,7 +357,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		...
 		Ended Job = job_201602101314_0151
 		OK
-		**683**
+		683
 		Time taken: 78.314 seconds
 		
 * How records are look like? 
@@ -365,7 +365,8 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		hive> SELECT * FROM tweets LIMIT 1;
 		
 		Result:
-		752871872170106881	Tue Jul 12 14:26:56 +0000 2016	<a href="http://twitter.com/download/android" rel="nofollow">Twitter for Android</a>	false	{"text":null,"user":null,"retweet_count":null}	{"urls":[],"user_mentions":[{"screen_name":"Amarte_Kong","name":"빈슈"}],"hashtags":[]}	@Amarte_Kong 맨션 수에 따라 올라가는 것..? ㅋㅋㅌㅋㅋ근데 왜때뮤네 빈슈가 없눈거야ㅠㅠ 트이터 일해라ㅠㅠ	{"screen_name":"Ha_an10","name":"메인이벤트❀하안❀","friends_count":218,"followers_count":892,"statuses_count":25758,"verified":false,"utc_offset":null,"time_zone":null}	Amarte_Kong Time taken: 0.383 seconds
+		757932578909347840	Tue Jul 26 13:36:23 +0000 2016	<a href="http://twitter.com" rel="nofollow">Twitter Web Client</a>	false	{"text":null,"user":null,"retweet_count":null}	{"urls":[{"expanded_url":"http://bit.ly/28SgGFE"}],"user_mentions":[],"hashtags":[{"text":"21CE"}]}	The #21CE CIO must adopt design thinking and must leverage predictive analytics to create unified experiences https://t.co/nhRHdcZ1Gi	{"screen_name":"pable_pable","name":"Saurabh Pable","friends_count":745,"followers_count":331,"statuses_count":14646,"verified":false,"utc_offset":null,"time_zone":null}	NULL
+		Time taken: 1.112 seconds
 
 
 
