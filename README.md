@@ -213,7 +213,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 
 ## 7. Add JSONSerDe file and create table structure in Hive:
 
-* Start Hive CLI 
+* Start Hive CLI in new terminal 
 
 		$ sudo hive 
 		hive>		
