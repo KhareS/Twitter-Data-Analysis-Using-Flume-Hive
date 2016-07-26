@@ -304,16 +304,24 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		$ hadoop fs -lsr /user/cloudera/flume/tweetsinput/
 		
 		Result:
-		-rw-r--r--   1 cloudera supergroup     223439 2016-07-26 06:36 /user/cloudera/flume/tweetsinput/FlumeData.1469540186105
-		-rw-r--r--   1 cloudera supergroup    2253627 2016-07-26 06:41 /user/cloudera/flume/tweetsinput/FlumeData.1469540482346
-		-rw-r--r--   1 cloudera supergroup     315235 2016-07-26 06:51 /user/cloudera/flume/tweetsinput/FlumeData.1469541087551
+		-rw-r--r--   1 xxxx xxxx    223439 2016-07-26 06:36 /user/cloudera/flume/tweetsinput/FlumeData.1469540186105
+		-rw-r--r--   1 xxxx xxxx    2253627 2016-07-26 06:41 /user/cloudera/flume/tweetsinput/FlumeData.1469540482346
+		-rw-r--r--   1 xxxx xxxx    315235 2016-07-26 06:51 /user/cloudera/flume/tweetsinput/FlumeData.1469541087551
 
-* Copy JSON files from HDFS to project folder $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/ 		
+* Copy JSON files from HDFS to project folder $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/rawTweets 		
 	
-		$ cd $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis	
+		$ cd $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis
+		$ ls -l
 		$ mkdir  rawTweets
+		$ ls -l
 		$ cd rawTweets/
-		$ hadoop fs -get /user/cloudera/flume/tweetsinput/*  $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/rawTweets/	
+		$ hadoop fs -get /user/cloudera/flume/tweetsinput/* $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/rawTweets/
+		$ ls -l
+
+		Result:
+		-rw-r--r-- 1 xxxx xxxx  223439 2016-07-26 07:41 FlumeData.1469540186105
+		-rw-r--r-- 1 xxxx xxxx  2253627 2016-07-26 07:41 FlumeData.1469540482346
+		-rw-r--r-- 1 xxxx xxxx  315235 2016-07-26 07:41 FlumeData.1469541087551
 
 * Load Data into Hive tables, your file name may have a different extension like; FlumeData.xxxxx		
 		
