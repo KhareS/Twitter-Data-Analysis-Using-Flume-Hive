@@ -41,7 +41,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 	 for other target systems, user can compile and built JAR files on target system using maven3, </br>
 	 for details see **Annexure-A** and **Annexure-B** 
 
-		a. flume-sources-1.0-SNAPSHOT.jar, 
+		a. flume-sources-1.0-SNAPSHOT.jar 
 		b. hive-serdes-1.0-SNAPSHOT.jar 
 
   5. Further reading: </br>
@@ -205,7 +205,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		$ sudo hive 
 		hive>		
 
-* Add JSONSerDe JAR file 'hive-serdes-1.0-SNAPSHOT.jar`  location 
+* Add JSONSerDe JAR file `hive-serdes-1.0-SNAPSHOT.jar`  location 
 
 		hive> ADD JAR $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/hive-serdes-1.0-SNAPSHOT.jar;
 
