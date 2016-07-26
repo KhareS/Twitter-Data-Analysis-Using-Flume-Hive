@@ -293,6 +293,8 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		text                	string              	from deserializer   
 		user                	struct<screen_name:string,name:string,friends_count:int,followers_count:int,statuses_count:int,verified:boolean,utc_offset:int,time_zone:string>from deserializer   
 		in_reply_to_screen_name	string              	from deserializer
+		...
+		...
 
 ## 8. Load data into Hive tables:
 
