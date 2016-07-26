@@ -344,18 +344,27 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 
 ## 9. Run HiveQL queries:
 
-* Select total count 		
+* Select total count of records 		
 	
 		hive> SELECT count(*) FROM tweets;
 
-		Result in:
+		Result:
+		Total MapReduce jobs = 1
+		Launching Job 1 out of 1
+		...
+		...
+		Starting Job = job_201602101314_0151, Tracking URL = http://localhost:50030/jobdetails.jsp?jobid=job_201602101314_0151
+		...
+		Ended Job = job_201602101314_0151
+		OK
+		**683**
+		Time taken: 78.314 seconds
 		
-
-* How records are look like? Check one record.
+* How records are look like? 
 
 		hive> SELECT * FROM tweets LIMIT 1;
 		
-		Result in:
+		Result:
 		752871872170106881	Tue Jul 12 14:26:56 +0000 2016	<a href="http://twitter.com/download/android" rel="nofollow">Twitter for Android</a>	false	{"text":null,"user":null,"retweet_count":null}	{"urls":[],"user_mentions":[{"screen_name":"Amarte_Kong","name":"빈슈"}],"hashtags":[]}	@Amarte_Kong 맨션 수에 따라 올라가는 것..? ㅋㅋㅌㅋㅋ근데 왜때뮤네 빈슈가 없눈거야ㅠㅠ 트이터 일해라ㅠㅠ	{"screen_name":"Ha_an10","name":"메인이벤트❀하안❀","friends_count":218,"followers_count":892,"statuses_count":25758,"verified":false,"utc_offset":null,"time_zone":null}	Amarte_Kong Time taken: 0.383 seconds
 
 
