@@ -225,7 +225,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 
 * create new databse
  
-		hive> create database if not exists twitterAnalysis; 
+		hive> create database if not exists twitteranalysis; 
 		
 		Result:
 		OK
@@ -237,7 +237,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		
 * use database
 
-		hive> use twitterAnalysis;
+		hive> use twitteranalysis;
 
 		Result:		
 		OK
