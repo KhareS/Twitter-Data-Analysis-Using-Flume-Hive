@@ -110,7 +110,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 * See **Appendix-A**; If want to built `flume-sources-1.0-SNAPSHOT.jar`
 	
 
-## 3. Setting up Flume agent:
+## 3. Set up Flume agent:
 
 	Create 'flume-twitter-analysis-conf.properties' file and use consumerKey & accessToken details.
 	
