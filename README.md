@@ -35,7 +35,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		
 	 **`TwitterAgent.sources.Twitter.type =  com.cloudera.flume.source.TwitterSource`**
 
-  3. Use Cloudera `JSONSerDe hive-serdes-1.0-SNAPSHOT.jar`
+  3. Use Cloudera JSONSerDe `hive-serdes-1.0-SNAPSHOT.jar`
 	
   4. Both JAR files are build and tested on Cludera Hadoop Distribution CDH3 v0.3.7, </br>
 	 for other target systems, user can compile and built JAR files on target system using maven3, </br>
@@ -76,7 +76,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 * Note down all four key at some place, will need this in Flume config file.
 
 
-## 2. Create subdirectories and copy JAR file:
+## 2. Create sub-directories and copy JAR file:
 
 	Create following directories and copy JAR file available at repository under /lib/ folder.
 	
@@ -125,7 +125,7 @@ Store live streaming Tweeter data in HDFS using Apache flume, further load this 
 		$ cd $HOME/Desktop/hadoop-Use-Cases/twitter-Analysis/
 		$ gedit flume-twitter-analysis-conf.properties
 
-* Paste following code in config file `flume-twitter-analysis-conf.properties` and Save.
+* Paste following code in config file `flume-twitter-analysis-conf.properties` and enter Twitter keys and token then Save.
 	
 		TwitterAgent.sources = Twitter 
 		TwitterAgent.channels = MemChannel 
